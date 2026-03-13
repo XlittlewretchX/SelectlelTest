@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.home-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background:#f5f2e9;
+}
+
+.home-card {
+  width: min(100%, 680px);
+  padding: 2.25rem;
+  border: 2px solid #2f2f2f;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.86);
+  box-shadow: 10px 10px 0 rgba(47, 47, 47, 0.2);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #0f4c5c;
+}
+
+h1 {
+  margin: 0.6rem 0 1rem;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+}
+
+p {
+  margin: 0;
+  max-width: 56ch;
+  line-height: 1.5;
+}
+
+.open-menu-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid #0f4c5c;
+  color: #0f4c5c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.open-menu-link:hover {
+  color: #fff;
+  background-color: #0f4c5c;
+}

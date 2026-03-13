@@ -1,0 +1,38 @@
+<main class="menu-page">
+  <header class="summary-header">
+    <span>Раздел: {{ activeSection()?.title ?? '—' }}</span>
+    <span>Выбрано пунктов: {{ selectedCount() }}</span>
+    <span>Общее значение: {{ selectedTotal() }}</span>
+  </header>
+
+  <div class="menu-layout">
+    <aside class="section-nav" aria-label="Список разделов">
+      @for (section of sections(); track section.id) {
+        <button
+          type="button"
+          class="section-button"
+          [class.section-button-active]="section.id === activeSectionId()"
+          (click)="setActiveSection(section.id)"
+        >
+          {{ section.title }}
+        </button>
+      }
+    </aside>
+
+    <section class="items-panel" aria-label="Пункты меню">
+      @if (activeSection(); as section) {
+        @for (item of section.items; track item.id) {
+          <label class="item-row">
+            <input type="checkbox" [checked]="item.checked" (change)="onItemToggle(item.id, $event)" />
+            <span class="item-content">
+              <span class="item-title">{{ item.label }}</span>
+              <span class="item-value">Value: {{ item.value }}</span>
+            </span>
+          </label>
+        }
+      }
+    </section>
+  </div>
+
+  <a routerLink="/" class="back-link">Вернуться на главную</a>
+</main>
